@@ -12,5 +12,6 @@ const app = createApp(App)
 
 app.use(createPinia())
 app.use(router)
+document.body.setAttribute('data-bs-theme', 'dark')
 
 app.mount('#app')
