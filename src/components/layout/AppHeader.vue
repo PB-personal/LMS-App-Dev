@@ -1,5 +1,5 @@
 <template>
-  <nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <nav class="navbar headerbar navbar-expand-lg bg-body-tertiary">
     <div class="container-fluid">
       <a class="navbar-brand" href="#">Navbar</a>
       <button
@@ -62,8 +62,15 @@
     </div>
   </nav>
 </template>
-<script>
-export default {
-  name: 'AppHeader',
+<script></script>
+<style scoped>
+.headerbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: white; /* or any color you prefer */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
-</script>
+</style>

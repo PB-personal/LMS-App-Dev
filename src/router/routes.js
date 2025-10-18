@@ -1,5 +1,5 @@
 import Login from '@/views/auth/LoginPage.vue'
-import Dashboard from '@/views/dashboard/Dashboard.vue'
+import AppDashboard from '@/views/dashboard/AppDashboard.vue'
 import { createRouter, createWebHistory } from 'vue-router'
 
 const router = createRouter({
@@ -8,7 +8,7 @@ const router = createRouter({
     {
       path: '/',
       name: 'dashboard',
-      component: Dashboard,
+      component: AppDashboard,
     },
     {
       path: '/login',
