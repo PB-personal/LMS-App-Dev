@@ -5,7 +5,8 @@
     "category": "Frontend",
     "difficulty": "Beginner",
     "rating": 4.5,
-    "enrolled": false
+    "enrolled": false,
+    "progress": 40
   },
   {
     "id": 2,
@@ -13,7 +14,8 @@
     "category": "Frontend",
     "difficulty": "Advanced",
     "rating": 4.8,
-    "enrolled": false
+    "enrolled": true,
+    "progress": 20
   },
   {
     "id": 3,
@@ -21,6 +23,7 @@
     "category": "Backend",
     "difficulty": "Intermediate",
     "rating": 4.3,
-    "enrolled": false
+    "enrolled": false,
+    "progress": 90
   }
 ]

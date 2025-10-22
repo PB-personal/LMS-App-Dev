@@ -13,5 +13,12 @@ export const useCourseStore = defineStore('courses', {
         console.error('Error loading mock data', error)
       }
     },
+
+    enrollCourse(courseId) {
+      const course = this.courses.find((c) => c.id === courseId)
+      if (course) {
+        course.enrolled = true
+      }
+    },
   },
 })
