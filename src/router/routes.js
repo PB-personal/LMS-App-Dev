@@ -1,7 +1,9 @@
+import { ROUTE_NAMES } from '@/constants/routeNames'
 import DashboardLayout from '@/layouts/DashboardLayout.vue'
 import Login from '@/views/auth/LoginPage.vue'
 import AppCourses from '@/views/dashboard/AppCourses.vue'
 import CourseDashboard from '@/views/dashboard/CourseDashboard.vue'
+import ProfilePage from '@/views/ProfilePage.vue'
 // import AppDashboard from '@/views/dashboard/AppDashboard.vue'
 import { createRouter, createWebHistory } from 'vue-router'
 
@@ -14,7 +16,7 @@ const router = createRouter({
     },
     {
       path: '/login',
-      name: 'login',
+      name: ROUTE_NAMES.LOGIN,
       component: Login,
     },
     {
@@ -32,6 +34,11 @@ const router = createRouter({
       path: '/courses',
       name: 'courses',
       component: AppCourses,
+    },
+    {
+      path: '/profile',
+      name: ROUTE_NAMES.PROFILE,
+      component: ProfilePage,
     },
   ],
 })

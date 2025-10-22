@@ -27,14 +27,16 @@
         </ul>
         <ul class="d-flex navbar-nav">
           <li class="nav-item">
-            <RouterLink class="nav-link">Profile</RouterLink>
+            <router-link class="nav-link" :to="{ name: ROUTE_NAMES.PROFILE }">Profile</router-link>
           </li>
         </ul>
       </div>
     </div>
   </nav>
 </template>
-<script></script>
+<script setup>
+import { ROUTE_NAMES } from '@/constants/routeNames'
+</script>
 <style scoped>
 .headerbar {
   position: fixed;

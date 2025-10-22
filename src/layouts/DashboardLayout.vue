@@ -28,4 +28,9 @@ import AppHeader from './AppHeader.vue'
   flex: 1;
   flex-direction: column;
 }
+
+/* account for fixed header height (default bootstrap navbar ~56px) */
+.main-content {
+  padding-top: 56px;
+}
 </style>
