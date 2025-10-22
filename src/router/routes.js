@@ -1,5 +1,8 @@
+import DashboardLayout from '@/layouts/DashboardLayout.vue'
 import Login from '@/views/auth/LoginPage.vue'
-import AppDashboard from '@/views/dashboard/AppDashboard.vue'
+import AppCourses from '@/views/dashboard/AppCourses.vue'
+import CourseDashboard from '@/views/dashboard/CourseDashboard.vue'
+// import AppDashboard from '@/views/dashboard/AppDashboard.vue'
 import { createRouter, createWebHistory } from 'vue-router'
 
 const router = createRouter({
@@ -7,13 +10,28 @@ const router = createRouter({
   routes: [
     {
       path: '/',
-      name: 'dashboard',
-      component: AppDashboard,
+      redirect: '/login',
     },
     {
       path: '/login',
       name: 'login',
       component: Login,
+    },
+    {
+      path: '/dashboard',
+      name: 'dashboard',
+      component: DashboardLayout,
+      children: [
+        {
+          path: '',
+          component: CourseDashboard,
+        },
+      ],
+    },
+    {
+      path: '/courses',
+      name: 'courses',
+      component: AppCourses,
     },
   ],
 })

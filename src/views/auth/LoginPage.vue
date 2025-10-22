@@ -23,7 +23,7 @@
                 <p v-if="errors.password" class="error">{{ errors.password }}</p>
               </div>
               <button type="submit" class="btn btn-success w-100">
-                <span v-if="isLoading" class="spinner-border spinner-border-sm me-2"></span>
+                <!-- <span class="spinner-border spinner-border-sm me-2"></span> -->
                 Sign In
               </button>
             </form>
@@ -34,9 +34,10 @@
   </div>
 </template>
 <script setup>
-import { reactive, ref } from 'vue'
-const isLoading = ref(false)
-
+import { reactive } from 'vue'
+import { useRouter } from 'vue-router'
+// const isLoading = ref(false)
+const router = useRouter()
 const form = reactive({
   email: '',
   password: '',
@@ -49,17 +50,21 @@ const errors = reactive({
 const validateForm = () => {
   errors.email = ''
   errors.password = ''
-
+  let valid = true
   if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email)) {
     errors.email = 'Please enter a valid email'
+    valid = false
   }
   if (form.password.length <= 3) {
     errors.password = 'Password must be at least 4 characters long'
+    valid = false
   }
+  return valid
 }
 const handleLogin = () => {
   if (validateForm()) {
     alert('Form is validated successfully!')
+    router.push('/dashboard')
   }
 }
 </script>
