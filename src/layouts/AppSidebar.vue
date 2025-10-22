@@ -4,19 +4,19 @@
     <div class="sidebar-header">My Dashboard</div>
     <ul class="nav flex-column mt-3">
       <li class="nav-item">
-        <a href="#" class="nav-link active"> <i class="bi bi-house-door-fill"></i> Home </a>
+        <a href="#" class="nav-link active"> 🏠 Dashboard </a>
       </li>
       <li class="nav-item">
-        <a href="#" class="nav-link"> <i class="bi bi-speedometer2"></i> Dashboard </a>
+        <a href="#" class="nav-link"> 📚 My Courses </a>
       </li>
       <li class="nav-item">
-        <a href="#" class="nav-link"> <i class="bi bi-people-fill"></i> Users </a>
+        <a href="#" class="nav-link"> 📈 Progress </a>
       </li>
       <li class="nav-item">
-        <a href="#" class="nav-link"> <i class="bi bi-gear-fill"></i> Settings </a>
+        <a href="#" class="nav-link">📝 Assessments </a>
       </li>
       <li class="nav-item mt-auto">
-        <a href="#" class="nav-link text-danger"> <i class="bi bi-box-arrow-right"></i> Logout </a>
+        <a href="#" class="nav-link text-danger"> 👤 Profile </a>
       </li>
     </ul>
   </div>
@@ -24,10 +24,9 @@
 <script></script>
 <style>
 .sidebar {
-  /* let parent control the width (AppDashboard will set 30%) */
   width: 100%;
-  max-width: 260px; /* optional cap on very wide screens */
-  height: 100vh; /* full viewport height */
+  max-width: 260px;
+  height: 100vh;
   background: linear-gradient(180deg, #343a40 0%, #212529 100%);
   color: #fff;
   transition: all 0.3s ease;
