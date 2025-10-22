@@ -1,21 +1,15 @@
 <template>
   <div class="course-list">
-    <h1 class="fw-bold text-white mb-4">LMS App development</h1>
-    <div v-if="courseStore.courses.length">
-      <div v-for="course in courseStore.courses" :key="course.id" class="course-card">
-        <h5>{{ course.title }}</h5>
-        <p>Category: {{ course.category }}</p>
-        <p>Difficulty: {{ course.difficulty }}</p>
-        <p>Rating: ⭐ {{ course.rating }}</p>
-      </div>
+    <h3>List of courses</h3>
+    <div class="grid">
+      <CourseCard v-for="course in courseStore.courses" :key="course.id" :course="course" />
     </div>
-
-    <p v-else>No courses found</p>
   </div>
 </template>
 <script setup>
 import { useCourseStore } from '@/stores/courseStore'
 import { onMounted } from 'vue'
+import CourseCard from '@/components/CourseCard.vue'
 const courseStore = useCourseStore()
 
 onMounted(() => {
@@ -24,12 +18,17 @@ onMounted(() => {
 </script>
 <style scoped>
 .course-list {
-  padding: 1rem;
+  padding: 5rem 2rem;
 }
 .course-card {
   border: 1px solid #ccc;
   padding: 1rem;
   border-radius: 10px;
   margin-bottom: 10px;
+}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1rem;
 }
 </style>

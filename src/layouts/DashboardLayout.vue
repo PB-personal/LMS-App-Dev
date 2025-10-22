@@ -19,7 +19,7 @@ import AppHeader from './AppHeader.vue'
   min-height: 100vh;
 }
 .sidebar-content {
-  width: 30%;
+  width: 20%;
   height: calc(100vh - 56px);
   position: sticky;
   top: 56px;
