@@ -4,7 +4,9 @@
     <div class="sidebar-header">My Dashboard</div>
     <ul class="nav flex-column mt-3">
       <li class="nav-item">
-        <a href="#" class="nav-link active"> 🏠 Dashboard </a>
+        <router-link class="nav-link active" :to="{ name: ROUTE_NAMES.DASHBOARD }">
+          🏠 Dashboard
+        </router-link>
       </li>
       <li class="nav-item">
         <a href="#" class="nav-link"> 📚 My Courses </a>
@@ -21,7 +23,9 @@
     </ul>
   </div>
 </template>
-<script></script>
+<script setup>
+import { ROUTE_NAMES } from '@/constants/routeNames'
+</script>
 <style>
 .sidebar {
   width: 100%;

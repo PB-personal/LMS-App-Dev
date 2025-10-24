@@ -1,0 +1,72 @@
+[
+  {
+    "text": "Which directive is used for conditional rendering?",
+    "options": ["v-show", "v-if", "v-model", "v-for"],
+    "answer": "v-if"
+  },
+  {
+    "text": "Which lifecycle hook runs after the component is mounted?",
+    "options": ["onCreated", "onMounted", "onBeforeMount", "setup"],
+    "answer": "onMounted"
+  },
+  {
+    "text": "What is the Composition API function for reactivity?",
+    "options": ["data()", "setup()", "ref()", "mounted()"],
+    "answer": "ref()"
+  },
+  {
+    "text": "What is the purpose of the setup() function?",
+    "options": [
+      "It defines component styles",
+      "It registers components globally",
+      "It is used to define reactive data and logic",
+      "It handles routing"
+    ],
+    "answer": "It is used to define reactive data and logic"
+  },
+  {
+    "text": "Which directive is used to loop over data in Vue?",
+    "options": ["v-if", "v-loop", "v-for", "v-bind"],
+    "answer": "v-for"
+  },
+  {
+    "text": "What is the purpose of the reactive() function?",
+    "options": [
+      "To define computed properties",
+      "To create deeply reactive objects",
+      "To register components",
+      "To watch variable changes"
+    ],
+    "answer": "To create deeply reactive objects"
+  },
+  {
+    "text": "Which Vue directive binds attributes dynamically?",
+    "options": ["v-bind", "v-on", "v-if", "v-show"],
+    "answer": "v-bind"
+  },
+  {
+    "text": "Which Vue directive listens to DOM events?",
+    "options": ["v-model", "v-bind", "v-for", "v-on"],
+    "answer": "v-on"
+  },
+  {
+    "text": "What does v-model help achieve?",
+    "options": [
+      "Conditional rendering",
+      "Event binding",
+      "Two-way data binding",
+      "Dynamic style changes"
+    ],
+    "answer": "Two-way data binding"
+  },
+  {
+    "text": "What is the correct way to define a computed property in the Composition API?",
+    "options": [
+      "computed(() => value * 2)",
+      "computed = value * 2",
+      "useComputed(() => value * 2)",
+      "watch(() => value * 2)"
+    ],
+    "answer": "computed(() => value * 2)"
+  }
+]

@@ -16,18 +16,23 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page">Dashboard</a>
+            <router-link
+              class="nav-link active"
+              aria-current="page"
+              :to="{ name: ROUTE_NAMES.DASHBOARD }"
+              >Dashboard</router-link
+            >
           </li>
           <li class="nav-item">
             <a class="nav-link">My Courses</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link">Quizzes</a>
+            <router-link class="nav-link" :to="{ name: ROUTE_NAMES.QUIZZES }">Quizzes</router-link>
           </li>
         </ul>
         <ul class="d-flex navbar-nav">
           <li class="nav-item">
-            <router-link class="nav-link" :to="{ name: ROUTE_NAMES.PROFILE }">Profile</router-link>
+            <router-link class="nav-link">Profile</router-link>
           </li>
         </ul>
       </div>
@@ -44,7 +49,7 @@ import { ROUTE_NAMES } from '@/constants/routeNames'
   left: 0;
   right: 0;
   z-index: 1000;
-  background: white; /* or any color you prefer */
+  background: white;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 </style>

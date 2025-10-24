@@ -1,0 +1,195 @@
+[
+  {
+    "id": 1,
+    "courseId": "vueFundamentals",
+    "title": "Vue Fundamentals Assessment",
+    "questions": [
+      {
+        "text": "Which directive is used for conditional rendering?",
+        "options": ["v-show", "v-if", "v-model", "v-for"],
+        "answer": "v-if"
+      },
+      {
+        "text": "Which lifecycle hook runs after the component is mounted?",
+        "options": ["onCreated", "onMounted", "onBeforeMount", "setup"],
+        "answer": "onMounted"
+      },
+      {
+        "text": "What is the Composition API function for reactivity?",
+        "options": ["data()", "setup()", "ref()", "mounted()"],
+        "answer": "ref()"
+      },
+      {
+        "text": "What is the purpose of the setup() function?",
+        "options": [
+          "It defines component styles",
+          "It registers components globally",
+          "It is used to define reactive data and logic",
+          "It handles routing"
+        ],
+        "answer": "It is used to define reactive data and logic"
+      },
+      {
+        "text": "Which directive is used to loop over data in Vue?",
+        "options": ["v-if", "v-loop", "v-for", "v-bind"],
+        "answer": "v-for"
+      },
+      {
+        "text": "What is the purpose of the reactive() function?",
+        "options": [
+          "To define computed properties",
+          "To create deeply reactive objects",
+          "To register components",
+          "To watch variable changes"
+        ],
+        "answer": "To create deeply reactive objects"
+      },
+      {
+        "text": "Which Vue directive binds attributes dynamically?",
+        "options": ["v-bind", "v-on", "v-if", "v-show"],
+        "answer": "v-bind"
+      },
+      {
+        "text": "Which Vue directive listens to DOM events?",
+        "options": ["v-model", "v-bind", "v-for", "v-on"],
+        "answer": "v-on"
+      },
+      {
+        "text": "What does v-model help achieve?",
+        "options": [
+          "Conditional rendering",
+          "Event binding",
+          "Two-way data binding",
+          "Dynamic style changes"
+        ],
+        "answer": "Two-way data binding"
+      },
+      {
+        "text": "What is the correct way to define a computed property in the Composition API?",
+        "options": [
+          "computed(() => value * 2)",
+          "computed = value * 2",
+          "useComputed(() => value * 2)",
+          "watch(() => value * 2)"
+        ],
+        "answer": "computed(() => value * 2)"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "courseId": "vueRouting",
+    "title": "Vue Routing Basics Quiz",
+    "questions": [
+      {
+        "text": "Which package is required for routing in Vue 3?",
+        "options": ["vue-router", "vuex", "pinia", "vue-navigation"],
+        "answer": "vue-router"
+      },
+      {
+        "text": "What component is used to define links in Vue Router?",
+        "options": ["<a>", "<RouterLink>", "<router-view>", "<link>"],
+        "answer": "<RouterLink>"
+      },
+      {
+        "text": "What does <router-view> do?",
+        "options": [
+          "Displays the matched route component",
+          "Renders navigation links",
+          "Defines nested routes",
+          "Handles API calls"
+        ],
+        "answer": "Displays the matched route component"
+      },
+      {
+        "text": "How do you define a dynamic route parameter?",
+        "options": ["/user:id", "/user/:id", "/user/{id}", "/user#id"],
+        "answer": "/user/:id"
+      },
+      {
+        "text": "Which function is used to navigate programmatically?",
+        "options": ["router.move()", "navigate()", "router.push()", "goTo()"],
+        "answer": "router.push()"
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "courseId": "piniaStore",
+    "title": "Pinia State Management Quiz",
+    "questions": [
+      {
+        "text": "Pinia is a replacement for which Vue library?",
+        "options": ["Vuex", "Axios", "Router", "BootstrapVue"],
+        "answer": "Vuex"
+      },
+      {
+        "text": "Which method is used to define a store in Pinia?",
+        "options": ["createStore", "defineStore", "useStore", "setupStore"],
+        "answer": "defineStore"
+      },
+      {
+        "text": "What function do you call inside components to access a store?",
+        "options": ["useStore()", "getStore()", "accessStore()", "loadStore()"],
+        "answer": "useStore()"
+      },
+      {
+        "text": "Where should Pinia be added in the Vue app?",
+        "options": [
+          "Inside App.vue setup()",
+          "Before mounting the app in main.js",
+          "In router/index.js",
+          "In each component separately"
+        ],
+        "answer": "Before mounting the app in main.js"
+      },
+      {
+        "text": "Which statement is true about Pinia?",
+        "options": [
+          "It supports TypeScript out of the box",
+          "It doesn’t support reactivity",
+          "It replaces Vue Router",
+          "It’s only used for API calls"
+        ],
+        "answer": "It supports TypeScript out of the box"
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "courseId": "vueComponents",
+    "title": "Vue Components & Props Quiz",
+    "questions": [
+      {
+        "text": "How do you pass data from a parent to a child component?",
+        "options": ["using v-model", "using props", "using emits", "using slots"],
+        "answer": "using props"
+      },
+      {
+        "text": "How do you send an event from a child component to its parent?",
+        "options": ["with props", "with emits", "with provide/inject", "with ref()"],
+        "answer": "with emits"
+      },
+      {
+        "text": "Which tag is used for named slots?",
+        "options": ["<slot name=''>", "<slot-named>", "<slot-prop>", "<slot-template>"],
+        "answer": "<slot name=''>"
+      },
+      {
+        "text": "What is a scoped slot?",
+        "options": [
+          "A slot that passes data from child to parent",
+          "A slot that restricts rendering scope",
+          "A global slot definition",
+          "A conditional slot rendering technique"
+        ],
+        "answer": "A slot that passes data from child to parent"
+      },
+      {
+        "text": "Which Composition API method is used to expose data to templates?",
+        "options": ["setup()", "ref()", "return {}", "export default"],
+        "answer": "return {}"
+      }
+    ]
+  }
+]
