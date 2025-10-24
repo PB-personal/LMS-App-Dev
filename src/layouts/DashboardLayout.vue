@@ -5,7 +5,14 @@
     </div>
     <div class="main-content">
       <AppHeader />
-      <router-view />
+      <Suspense>
+        <template #default>
+          <router-view :key="$route.fullPath" />
+        </template>
+        <template #fallback>
+          <div>Loading...</div>
+        </template>
+      </Suspense>
     </div>
   </div>
 </template>
