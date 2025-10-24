@@ -7,7 +7,7 @@ export const useCourseStore = defineStore('courses', {
   actions: {
     async getCourses() {
       try {
-        const response = await fetch('/src/mock/courses.json')
+        const response = await fetch('/src/assets/mock/courses.json')
         this.courses = await response.json()
       } catch (error) {
         console.error('Error loading mock data', error)

@@ -24,16 +24,16 @@ const router = createRouter({
       children: [
         {
           path: '',
-          name: 'dashboard',
+          name: ROUTE_NAMES.DASHBOARD,
           component: CourseDashboard,
         },
         {
-          path: '/quiz',
+          path: 'quiz',
           name: ROUTE_NAMES.QUIZZES,
           component: QuizListPage,
         },
         {
-          path: '/quiz/:courseId',
+          path: 'quiz/:courseId',
           name: ROUTE_NAMES.QUIZ,
           component: QuizPage,
         },

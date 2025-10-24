@@ -64,8 +64,12 @@ const selectedDifficulty = ref('')
 const searchCourse = ref('')
 const selectedSort = ref('')
 
-onMounted(() => {
-  courseStore.getCourses()
+onMounted(async () => {
+  try {
+    await courseStore.getCourses()
+  } catch (e) {
+    console.log(e)
+  }
 })
 
 const categories = computed(() => [...new Set(courses.value.map((c) => c.category))])

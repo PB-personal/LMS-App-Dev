@@ -2,14 +2,22 @@
   <div class="quiz-container p-4">
     <h2 class="mb-4">Available Quizzes</h2>
 
-    <div v-if="quizList.length" class="quiz-list mb-4">
+    <div v-if="isLoading" class="alert alert-info">Loading quizzes...</div>
+
+    <div v-else-if="error" class="alert alert-danger">
+      {{ error }}
+    </div>
+
+    <div v-else-if="questionStore.questions.length" class="quiz-list mb-4">
       <div
-        v-for="(question, index) in quizList"
-        :key="index"
+        v-for="(question, index) in questionStore.questions"
+        :key="question.id"
         class="quiz-item p-3 mb-3 border rounded"
       >
         <h5>{{ index + 1 }}. {{ question.title }}</h5>
-        <RouterLink :to="`/quiz/${question.courseId}`">Start Quiz</RouterLink>
+        <RouterLink :to="`quiz/${question.courseId}`" class="btn btn-primary">
+          Start Quiz
+        </RouterLink>
       </div>
     </div>
 
@@ -19,9 +27,24 @@
   </div>
 </template>
 <script setup>
-import questions from '@/mock/questions.json'
-import { ref } from 'vue'
+import { onMounted, ref } from 'vue'
 import { RouterLink } from 'vue-router'
+import { useQuestionStore } from '@/stores/questionStore'
 
-const quizList = ref(questions)
+const questionStore = useQuestionStore()
+const isLoading = ref(false)
+const error = ref(null)
+
+onMounted(async () => {
+  try {
+    isLoading.value = true
+    await questionStore.getQuestions()
+    error.value = null
+  } catch (e) {
+    error.value = 'Failed to load quizzes. Please try again later.'
+    console.error('Error loading quizzes:', e)
+  } finally {
+    isLoading.value = false
+  }
+})
 </script>
