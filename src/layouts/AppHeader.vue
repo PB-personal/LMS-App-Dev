@@ -37,11 +37,18 @@
             >
           </li>
         </ul>
-        <!-- <ul class="d-flex navbar-nav">
+        <ul class="d-flex navbar-nav" v-if="!store.isAuthenticated">
           <li class="nav-item">
-            <router-link class="nav-link">Profile</router-link>
+            <router-link class="nav-link" :to="{ name: ROUTE_NAMES.LOGIN }">Login</router-link>
           </li>
-        </ul> -->
+        </ul>
+        <ul class="d-flex navbar-nav" v-if="store.isAuthenticated">
+          <li class="nav-item">
+            <router-link class="nav-link" :to="{ name: ROUTE_NAMES.LOGIN }" @click="store.logout"
+              >Logout</router-link
+            >
+          </li>
+        </ul>
       </div>
     </div>
   </nav>
@@ -49,7 +56,9 @@
 <script setup>
 import { ROUTE_NAMES } from '@/constants/routeNames'
 import { useRoute } from 'vue-router'
+import { useAuthStore } from '@/stores/authStore'
 const route = useRoute()
+const store = useAuthStore()
 </script>
 <style scoped>
 .headerbar {

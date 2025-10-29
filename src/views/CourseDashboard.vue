@@ -36,7 +36,7 @@
       </select>
     </div>
     <h3>List of courses</h3>
-    <div class="grid">
+    <div class="grid" v-if="authStore.isAuthenticated">
       <template v-if="filteredCourses.length">
         <CourseCard
           v-for="course in filteredCourses"
@@ -50,6 +50,7 @@
         {{ selectedDifficulty }}
       </p>
     </div>
+    <p v-if="!authStore.isAuthenticated" class="pt-3">For enrolling courses, please login first.</p>
   </div>
 </template>
 <script setup>
@@ -57,7 +58,9 @@ import { useCourseStore } from '@/stores/courseStore'
 import { computed, onMounted, ref } from 'vue'
 import CourseCard from '@/components/CourseCard.vue'
 import { storeToRefs } from 'pinia'
+import { useAuthStore } from '@/stores/authStore'
 const courseStore = useCourseStore()
+const authStore = useAuthStore()
 const { courses } = storeToRefs(courseStore)
 const selectedCategory = ref('')
 const selectedDifficulty = ref('')
