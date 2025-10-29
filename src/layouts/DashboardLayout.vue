@@ -4,21 +4,12 @@
       <AppSidebar />
     </div>
     <div class="main-content">
-      <AppHeader />
-      <Suspense>
-        <template #default>
-          <router-view :key="$route.fullPath" />
-        </template>
-        <template #fallback>
-          <div>Loading...</div>
-        </template>
-      </Suspense>
+      <router-view />
     </div>
   </div>
 </template>
 <script setup>
 import AppSidebar from './AppSidebar.vue'
-import AppHeader from './AppHeader.vue'
 </script>
 <style scoped>
 .dashboard-layout {

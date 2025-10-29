@@ -1,7 +1,7 @@
 import { useCourseStore } from '@/stores/courseStore'
 import { createPinia, setActivePinia } from 'pinia'
 import { beforeEach, describe, it, expect, vi } from 'vitest'
-import coursesData from '@/mock/courses.json'
+import coursesData from '@/assets/mock/courses.json'
 
 describe('Course store', () => {
   beforeEach(() => {

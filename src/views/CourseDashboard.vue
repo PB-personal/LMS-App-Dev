@@ -1,8 +1,8 @@
 <template>
   <div class="course-list">
-    <div class="py-3 d-flex">
+    <div class="d-flex">
       <input
-        class="form-control py-1 px-4 w-50 me-3"
+        class="form-control py-1 px-4 w-50 me-3 mb-3"
         type="text"
         placeholder="Search courses..."
         v-model="searchCourse"
@@ -19,7 +19,7 @@
         </label>
       </div>
     </div>
-    <div class="filer-dropdown">
+    <div class="filer-dropdown mb-3">
       <label for=""> Category: </label>
       <select v-model="selectedCategory" class="me-5 ms-2">
         <option value="">All</option>
@@ -77,9 +77,7 @@ const categories = computed(() => [...new Set(courses.value.map((c) => c.categor
 const difficulties = computed(() => [...new Set(courses.value.map((c) => c.difficulty))])
 
 const handleEnroll = (cId) => {
-  // mark enrolled in the store state (Pinia allows direct mutation of reactive state)
-  const course = courseStore.courses.find((c) => c.id === cId)
-  if (course) course.enrolled = true
+  courseStore.enrollCourse(cId)
 }
 
 const filteredCourses = computed(() => {
@@ -113,7 +111,7 @@ const filteredCourses = computed(() => {
 </script>
 <style scoped>
 .course-list {
-  padding: 5rem 2rem;
+  padding: 2rem 2rem;
 }
 .course-card {
   border: 1px solid #ccc;

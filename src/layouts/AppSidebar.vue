@@ -4,11 +4,14 @@
     <div class="sidebar-header">My Dashboard</div>
     <ul class="nav flex-column mt-3">
       <li class="nav-item">
-        <router-link class="nav-link active" :to="{ name: ROUTE_NAMES.DASHBOARD }">
+        <router-link
+          :to="{ name: ROUTE_NAMES.DASHBOARD }"
+          :class="['nav-link', { active: route.name === ROUTE_NAMES.DASHBOARD }]"
+        >
           🏠 Dashboard
         </router-link>
       </li>
-      <li class="nav-item">
+      <!-- <li class="nav-item">
         <a href="#" class="nav-link"> 📚 My Courses </a>
       </li>
       <li class="nav-item">
@@ -16,15 +19,29 @@
       </li>
       <li class="nav-item">
         <a href="#" class="nav-link">📝 Assessments </a>
+      </li> -->
+      <li class="nav-item">
+        <router-link
+          :to="{ name: ROUTE_NAMES.QUIZZES }"
+          :class="[
+            'nav-link',
+            { active: route.name === ROUTE_NAMES.QUIZZES || route.name === ROUTE_NAMES.QUIZ },
+          ]"
+        >
+          📝 Quizzes
+        </router-link>
       </li>
-      <li class="nav-item mt-auto">
+      <!-- <li class="nav-item mt-auto">
         <a href="#" class="nav-link text-danger"> 👤 Profile </a>
-      </li>
+      </li> -->
     </ul>
   </div>
 </template>
 <script setup>
 import { ROUTE_NAMES } from '@/constants/routeNames'
+import { useRoute } from 'vue-router'
+
+const route = useRoute()
 </script>
 <style>
 .sidebar {

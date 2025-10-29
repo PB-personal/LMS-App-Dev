@@ -17,30 +17,39 @@
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
             <router-link
-              class="nav-link active"
+              :class="['nav-link', { active: route.name === ROUTE_NAMES.DASHBOARD }]"
               aria-current="page"
               :to="{ name: ROUTE_NAMES.DASHBOARD }"
               >Dashboard</router-link
             >
           </li>
-          <li class="nav-item">
+          <!-- <li class="nav-item">
             <a class="nav-link">My Courses</a>
-          </li>
+          </li> -->
           <li class="nav-item">
-            <router-link class="nav-link" :to="{ name: ROUTE_NAMES.QUIZZES }">Quizzes</router-link>
+            <router-link
+              :to="{ name: ROUTE_NAMES.QUIZZES }"
+              :class="[
+                'nav-link',
+                { active: route.name === ROUTE_NAMES.QUIZZES || route.name === ROUTE_NAMES.QUIZ },
+              ]"
+              >Quizzes</router-link
+            >
           </li>
         </ul>
-        <ul class="d-flex navbar-nav">
+        <!-- <ul class="d-flex navbar-nav">
           <li class="nav-item">
             <router-link class="nav-link">Profile</router-link>
           </li>
-        </ul>
+        </ul> -->
       </div>
     </div>
   </nav>
 </template>
 <script setup>
 import { ROUTE_NAMES } from '@/constants/routeNames'
+import { useRoute } from 'vue-router'
+const route = useRoute()
 </script>
 <style scoped>
 .headerbar {
