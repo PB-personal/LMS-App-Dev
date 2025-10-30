@@ -1,28 +1,31 @@
 <template>
   <div class="quiz-container p-4">
-    <h2 class="mb-4">Available Quizzes</h2>
+    <h2 class="mb-4">
+      {{ authStore.isAuthenticated ? 'Available Quizzes' : 'Login to see available quizzes' }}
+    </h2>
+    <div v-if="authStore.isAuthenticated">
+      <div v-if="isLoading" class="alert alert-info">Loading quizzes...</div>
 
-    <div v-if="isLoading" class="alert alert-info">Loading quizzes...</div>
-
-    <div v-else-if="error" class="alert alert-danger">
-      {{ error }}
-    </div>
-
-    <div v-else-if="questionStore.questions.length" class="quiz-list mb-4">
-      <div
-        v-for="(question, index) in questionStore.questions"
-        :key="question.id"
-        class="quiz-item p-3 mb-3 border rounded"
-      >
-        <h5>{{ index + 1 }}. {{ question.title }}</h5>
-        <RouterLink :to="`quiz/${question.courseId}`" class="btn btn-primary">
-          Start Quiz
-        </RouterLink>
+      <div v-else-if="error" class="alert alert-danger">
+        {{ error }}
       </div>
-    </div>
 
-    <div v-else class="quiz-list">
-      <div class="alert alert-info">No quizzes available yet. Check back soon!</div>
+      <div v-else-if="questionStore.questions.length" class="quiz-list mb-4">
+        <div
+          v-for="(question, index) in questionStore.questions"
+          :key="question.id"
+          class="quiz-item p-3 mb-3 border rounded"
+        >
+          <h5>{{ index + 1 }}. {{ question.title }}</h5>
+          <RouterLink :to="`quiz/${question.courseId}`" class="btn btn-primary">
+            Start Quiz
+          </RouterLink>
+        </div>
+      </div>
+
+      <div v-else class="quiz-list">
+        <div class="alert alert-info">No quizzes available yet. Check back soon!</div>
+      </div>
     </div>
   </div>
 </template>
@@ -30,8 +33,10 @@
 import { onMounted, ref } from 'vue'
 import { RouterLink } from 'vue-router'
 import { useQuestionStore } from '@/stores/questionStore'
+import { useAuthStore } from '@/stores/authStore'
 
 const questionStore = useQuestionStore()
+const authStore = useAuthStore()
 const isLoading = ref(false)
 const error = ref(null)
 

@@ -39,13 +39,15 @@
         </ul>
         <ul class="d-flex navbar-nav" v-if="!store.isAuthenticated">
           <li class="nav-item">
-            <router-link class="nav-link" :to="{ name: ROUTE_NAMES.LOGIN }">Login</router-link>
+            <router-link class="nav-link" :to="{ name: ROUTE_NAMES.LOGIN }"
+              ><i class="bi bi-box-arrow-in-right"></i>Login</router-link
+            >
           </li>
         </ul>
         <ul class="d-flex navbar-nav" v-if="store.isAuthenticated">
           <li class="nav-item">
             <router-link class="nav-link" :to="{ name: ROUTE_NAMES.LOGIN }" @click="store.logout"
-              >Logout</router-link
+              ><i class="bi bi-box-arrow-right"></i>Logout</router-link
             >
           </li>
         </ul>
